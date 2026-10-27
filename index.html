@@ -1,103 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Dela Cruz | Portfolio</title>
-  <link href="./dist/output.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawn.DEV | Computer Science Student</title>
+  <meta name="description" content="Portfolio of a second-year Computer Science student: projects, skills, and contact details." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Compiled by the Tailwind CLI -->
+  <link href="./dist/output.css" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+    .font-display { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+    /* Graph-paper background for the hero */
+    .graph-paper {
+      background-color: #f8fafc;
+      background-image:
+        linear-gradient(to right, #dbeafe 1px, transparent 1px),
+        linear-gradient(to bottom, #dbeafe 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 scroll-smooth">
+<body class="bg-white text-slate-800 antialiased">
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 bg-white shadow">
-    <nav class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-      <a href="#home" class="text-xl font-bold text-blue-600">Juan.dev</a>
-      <ul class="flex gap-6 text-sm font-medium">
-        <li><a href="#about" class="hover:text-blue-600">About</a></li>
-        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
-        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+  <!--  NAVIGATION BAR  -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4" aria-label="Main">
+      <a href="#home" class="font-display text-lg font-extrabold text-blue-700">Shawn.DEV</a>
+
+      <!-- Desktop links -->
+      <ul class="hidden gap-8 text-sm font-medium md:flex">
+        <li><a href="#about" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">Contact</a></li>
       </ul>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="rounded border border-slate-300 px-3 py-1.5 text-sm font-medium md:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        Menu
+      </button>
     </nav>
+
+    <!-- Mobile links -->
+    <ul id="mobile-menu" class="hidden border-t border-slate-200 px-6 py-3 text-sm font-medium md:hidden">
+      <li><a href="#about" class="block py-2">About</a></li>
+      <li><a href="#skills" class="block py-2">Skills</a></li>
+      <li><a href="#projects" class="block py-2">Projects</a></li>
+      <li><a href="#contact" class="block py-2">Contact</a></li>
+    </ul>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="max-w-5xl mx-auto px-6 py-24 text-center">
-    <p class="text-blue-600 font-semibold mb-2">Hello, I'm</p>
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Juan Dela Cruz</h1>
-    <p class="text-lg text-gray-600 mb-8">Computer Science student who loves building things.</p>
-    <a href="#projects"
-       class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-      View my work
-    </a>
-  </section>
+  <main>
 
-  <!-- ABOUT -->
-  <section id="about" class="bg-white py-20">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-gray-600 leading-relaxed">
-        I'm a second-year college student interested in programming and game development.
-        Write a few sentences about yourself, what you are studying, and what you want to learn.
-      </p>
-    </div>
-  </section>
+    <!--  HERO + PICTURE  -->
+    <section id="home" class="graph-paper">
+      <div class="mx-auto grid max-w-5xl items-center gap-12 px-6 py-16 md:grid-cols-5 md:py-24">
+        <div class="md:col-span-3">
+          <h1 class="font-display text-5xl font-extrabold leading-tight text-slate-900 md:text-6xl">
+            Hi, I’m Shawn Jimenez. I build programs that solve real problems.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-700">
+            I’m a second-year Computer Science student. I write Python and Java, and I’m learning to build for the web with HTML and Tailwind CSS.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#projects" class="rounded bg-blue-700 px-6 py-3 font-medium text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
+              See my projects
+            </a>
+            <a href="#contact" class="rounded border-2 border-slate-900 px-6 py-3 font-medium text-slate-900 hover:bg-slate-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">
+              Contact me
+            </a>
+          </div>
+        </div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
-    <div class="grid gap-6 md:grid-cols-3">
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">Project One</h3>
-        <p class="text-gray-600 text-sm mb-4">Short description of what this project does and what you learned.</p>
-        <a href="#" class="text-blue-600 text-sm font-medium hover:underline">View project</a>
+        <!-- Profile Picture -->
+        <div class="md:col-span-2">
+          <div class="mx-auto w-64 bg-amber-300 p-2 md:w-full md:max-w-xs">
+              <img
+              src="resrc/self_picture.jpg"
+              alt="Portrait of Shawn Jimenez"
+              class="aspect-square w-full bg-slate-200 object-cover object-top"
+            />
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">Project Two</h3>
-        <p class="text-gray-600 text-sm mb-4">Short description of what this project does and what you learned.</p>
-        <a href="#" class="text-blue-600 text-sm font-medium hover:underline">View project</a>
+    <!--  ABOUT ME  -->
+    <section id="about" class="mx-auto max-w-5xl px-6 py-20">
+      <h2 class="font-display text-3xl font-bold text-slate-900">About me</h2>
+      <div class="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed">
+        <p>
+          I’m a Computer Science student at <strong>AISAT College Dasmariñas</strong>, now in my second year. I started with Python and Java, and I like projects where I can see a program do something useful.
+        </p>
+        <p>
+          Outside class I experiment with game development and build small apps, such as a tuition management system with a database behind it. I’m looking for chances to learn from bigger projects and work with other developers.
+        </p>
       </div>
+    </section>
 
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-semibold mb-2">Project Three</h3>
-        <p class="text-gray-600 text-sm mb-4">Short description of what this project does and what you learned.</p>
-        <a href="#" class="text-blue-600 text-sm font-medium hover:underline">View project</a>
+    <!--  SKILLS TAB -->
+    <section id="skills" class="bg-slate-50">
+      <div class="mx-auto max-w-5xl px-6 py-20">
+        <h2 class="font-display text-3xl font-bold text-slate-900">Skills</h2>
+
+        <div class="mt-8 grid gap-10 md:grid-cols-3">
+          <div>
+            <h3 class="font-display text-xl font-bold text-blue-700">Programming</h3>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">Python</li>
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">Java</li>
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">SQL (SQLite)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-blue-700">Web</h3>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">HTML</li>
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">Tailwind CSS</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-blue-700">Tools and libraries</h3>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">customtkinter</li>
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">pygame</li>
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">VS Code</li>
+              <li class="rounded bg-white px-3 py-1.5 text-sm ring-1 ring-slate-300">Git and GitHub</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!--  PROJECTS TAB -->
+    <section id="projects" class="mx-auto max-w-5xl px-6 py-20">
+      <h2 class="font-display text-3xl font-bold text-slate-900">Projects</h2>
 
-  <!-- SKILLS -->
-  <section id="skills" class="bg-white py-20">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-8">Skills</h2>
-      <div class="flex flex-wrap justify-center gap-3">
-        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm">Python</span>
-        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm">Java</span>
-        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm">HTML & CSS</span>
-        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm">Tailwind CSS</span>
-        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm">SQL</span>
+      <div class="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+
+        <!-- Project 1 -->
+        <article class="grid gap-4 py-8 md:grid-cols-3">
+          <h3 class="font-display text-2xl font-bold text-slate-900">Tuition Manager</h3>
+          <div class="md:col-span-2">
+            <p class="leading-relaxed">
+              A desktop app that manages college tuition. It stores student IDs, prelim, midterm, and finals fees, and each student’s year status in a database.
+            </p>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">Python</li>
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">customtkinter</li>
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">sqlite3</li>
+            </ul>
+            <a href="https://github.com/shawnjimenez-dev" class="mt-4 inline-block font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="grid gap-4 py-8 md:grid-cols-3">
+          <h3 class="font-display text-2xl font-bold text-slate-900">Project name</h3>
+          <div class="md:col-span-2">
+            <p class="leading-relaxed">
+              Describe what it does and who it helps in one or two sentences.
+            </p>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">Java</li>
+            </ul>
+            <a href="#" class="mt-4 inline-block font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="grid gap-4 py-8 md:grid-cols-3">
+          <h3 class="font-display text-2xl font-bold text-slate-900">Project name</h3>
+          <div class="md:col-span-2">
+            <p class="leading-relaxed">
+              Describe what it does and who it helps in one or two sentences.
+            </p>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">Python</li>
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">pygame</li>
+            </ul>
+            <a href="#" class="mt-4 inline-block font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+          </div>
+        </article>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="text-3xl font-bold mb-4">Contact</h2>
-    <p class="text-gray-600 mb-6">Want to work together or just say hi?</p>
-    <a href="mailto:youremail@example.com"
-       class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-      Email me
-    </a>
-  </section>
+    <!--  CONTACT TAB  -->
+    <section id="contact" class="bg-blue-700 text-white">
+      <div class="mx-auto max-w-5xl px-6 py-20">
+        <h2 class="font-display text-3xl font-bold">Contact me</h2>
+        <p class="mt-4 max-w-xl text-lg text-blue-100">
+          Have a question, a project idea, or an opportunity? Send me a message.
+        </p>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-800 text-gray-300 text-center text-sm py-6">
-    &copy; 2026 Juan Dela Cruz. All rights reserved.
+        <dl class="mt-8 grid gap-6 sm:grid-cols-3">
+          <div>
+            <dt class="font-medium text-blue-200">Email</dt>
+            <dd class="mt-1"><a href="mailto:shawnujimenez@gmail.com" class="underline underline-offset-4 hover:text-amber-300">shawnujimenez@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt class="font-medium text-blue-200">GitHub</dt>
+            <dd class="mt-1"><a href="https://github.com/shawnjimenez-dev" class="underline underline-offset-4 hover:text-amber-300">github.com/shawnjimenez-dev</a></dd>
+          </div>
+          <div>
+            <dt class="font-medium text-blue-200">Based in</dt>
+            <dd class="mt-1">Imus, Cavite, Philippines</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 py-6 text-center text-sm text-slate-400">
+    © 2026 Shawn Ulysses Jimenez. Built with HTML and Tailwind CSS.
   </footer>
 
+    <!-- JAVASCRIPT(FOR MOBILE MENU) -->
+  <script>
+    // Open and close the mobile menu
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', false);
+      })
+    );
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,7 @@
   <style>
     body { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
     .font-display { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
-    /* Graph-paper background for the hero */
+    /* Graph paper background for the hero */
     .graph-paper {
       background-color: #f8fafc;
       background-image:
@@ -30,17 +30,17 @@
 
 <body class="bg-white text-slate-800 antialiased">
 
-  <!--  NAVIGATION BAR  -->
+  <!-- Navigation bar -->
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4" aria-label="Main">
-      <a href="#home" class="font-display text-lg font-extrabold text-blue-700">Shawn.DEV</a>
+      <a href="#home" class="font-display text-lg font-extrabold text-blue-700">Shawn Jimenez</a>
 
       <!-- Desktop links -->
-      <ul class="hidden gap-8 text-sm font-medium md:flex">
-        <li><a href="#about" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">About</a></li>
-        <li><a href="#skills" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-700">Contact</a></li>
+      <ul class="hidden gap-2 text-sm font-medium md:flex">
+        <li><a href="#about" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white focus-visible:bg-blue-700 focus-visible:text-white">About</a></li>
+        <li><a href="#skills" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white focus-visible:bg-blue-700 focus-visible:text-white">Skills</a></li>
+        <li><a href="#projects" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white focus-visible:bg-blue-700 focus-visible:text-white">Projects</a></li>
+        <li><a href="#contact" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white focus-visible:bg-blue-700 focus-visible:text-white">Contact</a></li>
       </ul>
 
       <!-- Mobile menu button -->
@@ -51,16 +51,16 @@
 
     <!-- Mobile links -->
     <ul id="mobile-menu" class="hidden border-t border-slate-200 px-6 py-3 text-sm font-medium md:hidden">
-      <li><a href="#about" class="block py-2">About</a></li>
-      <li><a href="#skills" class="block py-2">Skills</a></li>
-      <li><a href="#projects" class="block py-2">Projects</a></li>
-      <li><a href="#contact" class="block py-2">Contact</a></li>
+      <li><a href="#about" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white">About</a></li>
+      <li><a href="#skills" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white">Skills</a></li>
+      <li><a href="#projects" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white">Projects</a></li>
+      <li><a href="#contact" class="block rounded px-3 py-2 hover:bg-blue-700 hover:text-white">Contact</a></li>
     </ul>
   </header>
 
   <main>
 
-    <!--  HERO + PICTURE  -->
+    <!-- Hero and picture -->
     <section id="home" class="graph-paper">
       <div class="mx-auto grid max-w-5xl items-center gap-12 px-6 py-16 md:grid-cols-5 md:py-24">
         <div class="md:col-span-3">
@@ -80,10 +80,10 @@
           </div>
         </div>
 
-        <!-- Profile Picture -->
+        <!-- Your picture: put your photo at resrc/self_picture.jpg -->
         <div class="md:col-span-2">
           <div class="mx-auto w-64 bg-amber-300 p-2 md:w-full md:max-w-xs">
-              <img
+            <img
               src="resrc/self_picture.jpg"
               alt="Portrait of Shawn Jimenez"
               class="aspect-square w-full bg-slate-200 object-cover object-top"
@@ -93,7 +93,7 @@
       </div>
     </section>
 
-    <!--  ABOUT ME  -->
+    <!-- About me -->
     <section id="about" class="mx-auto max-w-5xl px-6 py-20">
       <h2 class="font-display text-3xl font-bold text-slate-900">About me</h2>
       <div class="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed">
@@ -106,7 +106,7 @@
       </div>
     </section>
 
-    <!--  SKILLS TAB -->
+    <!-- Skills -->
     <section id="skills" class="bg-slate-50">
       <div class="mx-auto max-w-5xl px-6 py-20">
         <h2 class="font-display text-3xl font-bold text-slate-900">Skills</h2>
@@ -140,17 +140,35 @@
       </div>
     </section>
 
-    <!--  PROJECTS TAB -->
+    <!-- Projects (with filter buttons) -->
     <section id="projects" class="mx-auto max-w-5xl px-6 py-20">
       <h2 class="font-display text-3xl font-bold text-slate-900">Projects</h2>
 
-      <div class="mt-8 divide-y divide-slate-200 border-y border-slate-200">
+      <!-- Filter buttons: click one to show only projects that use that language -->
+      <div class="mt-6 flex flex-wrap items-center gap-2" role="group" aria-label="Filter projects by language">
+        <span class="mr-2 text-sm font-medium text-slate-600">Show:</span>
+        <button type="button" data-filter="all" aria-pressed="true"
+          class="rounded border border-blue-700 bg-blue-700 px-4 py-1.5 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">All</button>
+        <button type="button" data-filter="python" aria-pressed="false"
+          class="rounded border border-slate-300 bg-white px-4 py-1.5 text-sm font-medium text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">Python</button>
+        <button type="button" data-filter="java" aria-pressed="false"
+          class="rounded border border-slate-300 bg-white px-4 py-1.5 text-sm font-medium text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">Java</button>
+      </div>
+
+      <!--
+        HOW TO ADD A PROJECT:
+        1. Copy one whole <article> ... </article> card below and paste it after the last card.
+        2. Change the title, description, tags, and GitHub link.
+        3. Set data-tech to the languages it uses, in lowercase, separated by spaces
+           (for example "python" or "python java"). The filter buttons use this.
+      -->
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
         <!-- Project 1 -->
-        <article class="grid gap-4 py-8 md:grid-cols-3">
-          <h3 class="font-display text-2xl font-bold text-slate-900">Tuition Manager</h3>
-          <div class="md:col-span-2">
-            <p class="leading-relaxed">
+        <article data-tech="python" class="rounded border border-slate-300 bg-white hover:border-blue-700">
+          <div class="flex h-full flex-col p-6">
+            <h3 class="font-display text-xl font-bold text-slate-900">Tuition Manager</h3>
+            <p class="mt-3 leading-relaxed">
               A desktop app that manages college tuition. It stores student IDs, prelim, midterm, and finals fees, and each student’s year status in a database.
             </p>
             <ul class="mt-4 flex flex-wrap gap-2 text-sm">
@@ -158,43 +176,57 @@
               <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">customtkinter</li>
               <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">sqlite3</li>
             </ul>
-            <a href="https://github.com/shawnjimenez-dev" class="mt-4 inline-block font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+            <a href="https://github.com/shawnjimenez-dev" class="mt-auto inline-block pt-6 font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
           </div>
         </article>
 
-        <!-- Project 2 -->
-        <article class="grid gap-4 py-8 md:grid-cols-3">
-          <h3 class="font-display text-2xl font-bold text-slate-900">Project name</h3>
-          <div class="md:col-span-2">
-            <p class="leading-relaxed">
+        <!-- Project 2: replace with your own -->
+        <article data-tech="java" class="rounded border border-slate-300 bg-white hover:border-blue-700">
+          <div class="flex h-full flex-col p-6">
+            <h3 class="font-display text-xl font-bold text-slate-900">Project name</h3>
+            <p class="mt-3 leading-relaxed">
               Describe what it does and who it helps in one or two sentences.
             </p>
             <ul class="mt-4 flex flex-wrap gap-2 text-sm">
               <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">Java</li>
             </ul>
-            <a href="#" class="mt-4 inline-block font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+            <a href="#" class="mt-auto inline-block pt-6 font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
           </div>
         </article>
 
-        <!-- Project 3 -->
-        <article class="grid gap-4 py-8 md:grid-cols-3">
-          <h3 class="font-display text-2xl font-bold text-slate-900">Project name</h3>
-          <div class="md:col-span-2">
-            <p class="leading-relaxed">
+        <!-- Project 3: replace with your own -->
+        <article data-tech="python" class="rounded border border-slate-300 bg-white hover:border-blue-700">
+          <div class="flex h-full flex-col p-6">
+            <h3 class="font-display text-xl font-bold text-slate-900">Project name</h3>
+            <p class="mt-3 leading-relaxed">
               Describe what it does and who it helps in one or two sentences.
             </p>
             <ul class="mt-4 flex flex-wrap gap-2 text-sm">
               <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">Python</li>
               <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">pygame</li>
             </ul>
-            <a href="#" class="mt-4 inline-block font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+            <a href="#" class="mt-auto inline-block pt-6 font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
+          </div>
+        </article>
+
+        <article data-tech="python" class="rounded border border-slate-300 bg-white hover:border-blue-700">
+          <div class="flex h-full flex-col p-6">
+            <h3 class="font-display text-xl font-bold text-slate-900">Project name</h3>
+            <p class="mt-3 leading-relaxed">
+              Describe what it does and who it helps in one or two sentences.
+            </p>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">Python</li>
+              <li class="rounded bg-blue-100 px-2.5 py-1 text-blue-800">pygame</li>
+            </ul>
+            <a href="#" class="mt-auto inline-block pt-6 font-medium text-blue-700 underline underline-offset-4 hover:text-blue-900">View on GitHub</a>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!--  CONTACT TAB  -->
+    <!-- Contact (with copy button and message form) -->
     <section id="contact" class="bg-blue-700 text-white">
       <div class="mx-auto max-w-5xl px-6 py-20">
         <h2 class="font-display text-3xl font-bold">Contact me</h2>
@@ -205,7 +237,10 @@
         <dl class="mt-8 grid gap-6 sm:grid-cols-3">
           <div>
             <dt class="font-medium text-blue-200">Email</dt>
-            <dd class="mt-1"><a href="mailto:shawnujimenez@gmail.com" class="underline underline-offset-4 hover:text-amber-300">shawnujimenez@gmail.com</a></dd>
+            <dd class="mt-1">
+              <a id="email-link" href="mailto:shawnujimenez@gmail.com" class="underline underline-offset-4 hover:text-amber-300">shawnujimenez@gmail.com</a>
+              <button id="copy-email" type="button" class="ml-2 rounded border border-blue-300 px-2 py-0.5 text-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">Copy</button>
+            </dd>
           </div>
           <div>
             <dt class="font-medium text-blue-200">GitHub</dt>
@@ -216,6 +251,29 @@
             <dd class="mt-1">Imus, Cavite, Philippines</dd>
           </div>
         </dl>
+
+        <!-- Message form: opens the visitor's email app with the message filled in -->
+        <form id="contact-form" class="mt-12 max-w-xl space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-blue-100">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name"
+              class="mt-1 w-full rounded border border-blue-300 bg-white px-3 py-2 text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-300" />
+          </div>
+          <div>
+            <label for="from" class="block text-sm font-medium text-blue-100">Your email</label>
+            <input id="from" name="from" type="email" required autocomplete="email"
+              class="mt-1 w-full rounded border border-blue-300 bg-white px-3 py-2 text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-300" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-blue-100">Message</label>
+            <textarea id="message" name="message" rows="4" required
+              class="mt-1 w-full rounded border border-blue-300 bg-white px-3 py-2 text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-300"></textarea>
+          </div>
+          <button type="submit" class="rounded bg-amber-300 px-6 py-3 font-medium text-slate-900 hover:bg-amber-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            Send message
+          </button>
+          <p id="form-status" class="text-sm text-blue-100" role="status"></p>
+        </form>
       </div>
     </section>
   </main>
@@ -224,9 +282,8 @@
     © 2026 Shawn Ulysses Jimenez. Built with HTML and Tailwind CSS.
   </footer>
 
-    <!-- JAVASCRIPT(FOR MOBILE MENU) -->
   <script>
-    // Open and close the mobile menu
+    // Mobile menu: open and close
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('mobile-menu');
     btn.addEventListener('click', () => {
@@ -239,6 +296,65 @@
         btn.setAttribute('aria-expanded', false);
       })
     );
+
+    // Project filter buttons
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const projectCards = document.querySelectorAll('[data-tech]');
+    const activeClasses = ['bg-blue-700', 'text-white', 'border-blue-700'];
+    const idleClasses = ['bg-white', 'text-slate-800', 'border-slate-300'];
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const chosen = button.dataset.filter;
+
+        // Show or hide each project
+        projectCards.forEach(card => {
+          const languages = card.dataset.tech.split(' ');
+          const show = chosen === 'all' || languages.includes(chosen);
+          card.classList.toggle('hidden', !show);
+        });
+
+        // Highlight the chosen button
+        filterButtons.forEach(other => {
+          const isChosen = other === button;
+          other.classList.remove(...(isChosen ? idleClasses : activeClasses));
+          other.classList.add(...(isChosen ? activeClasses : idleClasses));
+          other.setAttribute('aria-pressed', isChosen);
+        });
+      });
+    });
+
+    // Email: copy button and message form
+    // The email address is read from the link above, so you only change it in one place.
+    const emailLink = document.getElementById('email-link');
+    const copyBtn = document.getElementById('copy-email');
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(emailLink.textContent.trim())
+        .then(() => { copyBtn.textContent = 'Copied!'; })
+        .catch(() => { copyBtn.textContent = 'Copy failed'; });
+      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+    });
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const name = form.elements.name.value.trim();
+      const from = form.elements.from.value.trim();
+      const message = form.elements.message.value.trim();
+
+      const subject = 'Portfolio message from ' + name;
+      const body = message + '\n\nFrom: ' + name + ' (' + from + ')';
+      const to = emailLink.textContent.trim();
+
+      window.location.href =
+        'mailto:' + to +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+
+      status.textContent = 'Opening your email app. If nothing opens, copy my email above and send your message there.';
+    });
   </script>
 </body>
 </html>

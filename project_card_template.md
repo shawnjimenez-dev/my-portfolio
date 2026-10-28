@@ -9,6 +9,8 @@ easy copy and paste
  -->
 
 
+<!--
+
 
 <article data-tech="python" class="rounded border border-slate-300 bg-white hover:border-blue-700">
     <div class="flex h-full flex-col p-6">
@@ -28,3 +30,6 @@ easy copy and paste
         </a>
     </div>
 </article>
+
+
+-->

@@ -33,7 +33,7 @@
   <!-- Navigation bar -->
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4" aria-label="Main">
-      <a href="#home" class="font-display text-lg font-extrabold text-blue-700">Shawn Jimenez</a>
+      <a href="#home" class="font-display text-lg font-extrabold text-blue-700">Shawn.DEV</a>
 
       <!-- Desktop links -->
       <ul class="hidden gap-2 text-sm font-medium md:flex">
@@ -155,13 +155,8 @@
           class="rounded border border-slate-300 bg-white px-4 py-1.5 text-sm font-medium text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">Java</button>
       </div>
 
-      <!--
-        HOW TO ADD A PROJECT:
-        1. Copy one whole <article> ... </article> card below and paste it after the last card.
-        2. Change the title, description, tags, and GitHub link.
-        3. Set data-tech to the languages it uses, in lowercase, separated by spaces
-           (for example "python" or "python java"). The filter buttons use this.
-      -->
+      <!-- project layer(copy the article and change all data)-->
+
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
         <!-- Project 1 -->
@@ -180,7 +175,7 @@
           </div>
         </article>
 
-        <!-- Project 2: replace with your own -->
+        <!-- Project 2 -->
         <article data-tech="java" class="rounded border border-slate-300 bg-white hover:border-blue-700">
           <div class="flex h-full flex-col p-6">
             <h3 class="font-display text-xl font-bold text-slate-900">Project name</h3>
@@ -194,7 +189,7 @@
           </div>
         </article>
 
-        <!-- Project 3: replace with your own -->
+        <!-- Project 3 -->
         <article data-tech="python" class="rounded border border-slate-300 bg-white hover:border-blue-700">
           <div class="flex h-full flex-col p-6">
             <h3 class="font-display text-xl font-bold text-slate-900">Project name</h3>
@@ -209,6 +204,7 @@
           </div>
         </article>
 
+        <!-- Project 4 -->
         <article data-tech="python" class="rounded border border-slate-300 bg-white hover:border-blue-700">
           <div class="flex h-full flex-col p-6">
             <h3 class="font-display text-xl font-bold text-slate-900">Project name</h3>
@@ -279,82 +275,9 @@
   </main>
 
   <footer class="bg-slate-900 py-6 text-center text-sm text-slate-400">
-    © 2026 Shawn Ulysses Jimenez. Built with HTML and Tailwind CSS.
+    © 2026 Shawn Ulysses P. Jimenez. Built with HTML and Tailwind CSS.
   </footer>
 
-  <script>
-    // Mobile menu: open and close
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
-      const open = menu.classList.toggle('hidden') === false;
-      btn.setAttribute('aria-expanded', open);
-    });
-    menu.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', false);
-      })
-    );
-
-    // Project filter buttons
-    const filterButtons = document.querySelectorAll('[data-filter]');
-    const projectCards = document.querySelectorAll('[data-tech]');
-    const activeClasses = ['bg-blue-700', 'text-white', 'border-blue-700'];
-    const idleClasses = ['bg-white', 'text-slate-800', 'border-slate-300'];
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const chosen = button.dataset.filter;
-
-        // Show or hide each project
-        projectCards.forEach(card => {
-          const languages = card.dataset.tech.split(' ');
-          const show = chosen === 'all' || languages.includes(chosen);
-          card.classList.toggle('hidden', !show);
-        });
-
-        // Highlight the chosen button
-        filterButtons.forEach(other => {
-          const isChosen = other === button;
-          other.classList.remove(...(isChosen ? idleClasses : activeClasses));
-          other.classList.add(...(isChosen ? activeClasses : idleClasses));
-          other.setAttribute('aria-pressed', isChosen);
-        });
-      });
-    });
-
-    // Email: copy button and message form
-    // The email address is read from the link above, so you only change it in one place.
-    const emailLink = document.getElementById('email-link');
-    const copyBtn = document.getElementById('copy-email');
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
-
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(emailLink.textContent.trim())
-        .then(() => { copyBtn.textContent = 'Copied!'; })
-        .catch(() => { copyBtn.textContent = 'Copy failed'; });
-      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
-    });
-
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      const name = form.elements.name.value.trim();
-      const from = form.elements.from.value.trim();
-      const message = form.elements.message.value.trim();
-
-      const subject = 'Portfolio message from ' + name;
-      const body = message + '\n\nFrom: ' + name + ' (' + from + ')';
-      const to = emailLink.textContent.trim();
-
-      window.location.href =
-        'mailto:' + to +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      status.textContent = 'Opening your email app. If nothing opens, copy my email above and send your message there.';
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
